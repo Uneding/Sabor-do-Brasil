@@ -46,6 +46,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     // Mostra contadores de likes/dislikes do perfil
     document.querySelector('.perfil .likes .col-6:nth-child(1) span').textContent = '0';
     document.querySelector('.perfil .likes .col-6:nth-child(2) span').textContent = '0';
+    // Mostra o botão Nova Publicação
+    const novaPublicacaoBtn = document.getElementById('novaPublicacaoBtn');
+    if (novaPublicacaoBtn) novaPublicacaoBtn.classList.remove('d-none');
   }
 
   // Função para esconder dados do usuário logado
@@ -54,6 +57,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     document.getElementById('userPhoto').src = "imagens/logo/logo_sabor_do_brasil.png";
     loginButton.classList.remove("d-none");
     logoutButton.classList.add("d-none");
+    // Esconde o botão Nova Publicação
+    const novaPublicacaoBtn = document.getElementById('novaPublicacaoBtn');
+    if (novaPublicacaoBtn) novaPublicacaoBtn.classList.add('d-none');
     // Zera contadores de likes/dislikes do perfil
     document.querySelector('.perfil .likes .col-6:nth-child(1) span').textContent = '0';
     document.querySelector('.perfil .likes .col-6:nth-child(2) span').textContent = '0';
