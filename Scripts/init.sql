@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS `init`.`usuario` (
   `nome` VARCHAR(100) NOT NULL,
   `email` VARCHAR(100) NOT NULL,
   `senha` VARCHAR(100) NOT NULL,
-  `foto` VARCHAR(255) NOT NULL,
+  `foto` LONGTEXT NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE (`email`)
 )
@@ -38,7 +38,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `init`.`empresa` (
   `id` INT NOT NULL,
   `nome` VARCHAR(100) NOT NULL,
-  `foto` VARCHAR(255) NOT NULL,
+  `foto` LONGTEXT NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
@@ -51,7 +51,7 @@ CREATE TABLE IF NOT EXISTS `init`.`publicacao` (
   `id_empresa` INT NOT NULL,
   `id_usuario` INT NOT NULL,
   `nome_prato` VARCHAR(50) NOT NULL,
-  `foto` VARCHAR(100) NOT NULL,
+  `foto` LONGTEXT NOT NULL,
   `local` VARCHAR(100) NOT NULL,
   `cidade-estado` VARCHAR(100) NOT NULL,
   PRIMARY KEY (`id`),
@@ -102,7 +102,7 @@ CREATE TABLE IF NOT EXISTS `init`.`comentarios` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `id_usuarios` INT NOT NULL,
   `id_publicacao` INT NOT NULL,
-  `foto_perfil` VARCHAR(255) NOT NULL,
+  `foto_perfil` LONGTEXT NOT NULL,
   `descricao` LONGTEXT NOT NULL,
   `data_comentario` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
